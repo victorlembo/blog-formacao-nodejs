@@ -1,0 +1,36 @@
+<%-include('partials/header.ejs') %> <%-include('partials/homenavbar.ejs') %>
+<body>
+  <div class="container">
+    <hr />
+    <div class="jumbotron">
+      <h3>Bem vindo ao,</h3>
+      <h1>Blog Formacao NodeJS</h1>
+      <hr class="my-4" />
+      <p>
+        Este e um blog desenvolvido no curso Formacao NodeJS do guia do
+        programador.
+      </p>
+    </div>
+    <hr />
+    <%articles.forEach(article => {%>
+    <div class="card">
+      <div class="card-header">
+        <h2><%=article.title%></h2>
+      </div>
+      <div class="card-body">
+        <a class="btn btn-success" href="/<%=article.slug%>">Ler artigo</a>
+      </div>
+    </div>
+    <br />
+    <%})%>
+
+    <div class="row">
+      <div class="col col-12">
+        <hr />
+        <a style="float: right" href="/articles/page/2">Proxima pagina ></a>
+      </div>
+    </div>
+    <hr />
+  </div>
+</body>
+<%-include('partials/footer.ejs') %>
